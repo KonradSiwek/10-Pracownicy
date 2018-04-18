@@ -84,8 +84,8 @@ public void setHireDate(LocalDate hireDate) {
 public Employee() {
 	
 }
-public Employee(int id, String firstName, String lastName, String jobTitle, int salary, String departmentName,
-		String address, String postalCode, String city, String country, LocalDate hireDate) {
+public Employee(int id, String firstName, String lastName, String jobTitle, int salary, LocalDate hireDate, String departmentName,
+		String address, String postalCode, String city, String country) {
 
 	this.id = id;
 	this.firstName = firstName;
