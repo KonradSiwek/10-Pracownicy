@@ -1,4 +1,3 @@
-employee_id;first_name;last_name;job_title;salary;hire_date;department_name;address;postal_code;city;country
 100;Steven;King;President;24000;1987-06-17;Executive;2004 Charade Rd;98199;Seattle;United States of America
 101;Neena;Kochhar;Administration Vice President;17000;1989-09-21;Executive;2004 Charade Rd;98199;Seattle;United States of America
 102;Lex;De Haan;Administration Vice President;17000;1993-01-13;Executive;2004 Charade Rd;98199;Seattle;United States of America
@@ -106,4 +105,3 @@ employee_id;first_name;last_name;job_title;salary;hire_date;department_name;addr
 204;Hermann;Baer;Public Relations Representative;10000;1994-06-07;Public Relations;Schwanthalerstr. 7031;80925;Munich;Germany
 205;Shelley;Higgins;Accounting Manager;12000;1994-06-07;Accounting;2004 Charade Rd;98199;Seattle;United States of America
 206;William;Gietz;Public Accountant;8300;1994-06-07;Accounting;2004 Charade Rd;98199;Seattle;United States of America
-(107 wierszy)

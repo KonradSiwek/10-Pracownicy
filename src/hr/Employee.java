@@ -103,7 +103,7 @@ public Employee(int id, String firstName, String lastName, String jobTitle, int 
 public String toString() {
 	return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", jobTitle=" + jobTitle
 			+ ", salary=" + salary + ", departmentName=" + departmentName + ", address=" + address + ", postalCode="
-			+ postalCode + ", city=" + city + ", country=" + country + "]";
+			+ postalCode +" kod pocztowy= " +hireDate+ ", city=" + city + ", country=" + country + "]";
 }
 
 
