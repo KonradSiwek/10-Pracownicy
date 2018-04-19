@@ -41,6 +41,7 @@ public class WypiszPensjeStanowiskami {
 		for (Employee employee : listaPracownikow) {
 			pensja +=employee.getSalary();
 			
+			
 			for(String stanowisko: job) {
 				
 			if(stanowisko.equals(employee.getJobTitle())){
