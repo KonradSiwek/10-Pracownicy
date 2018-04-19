@@ -3,6 +3,7 @@ package hr;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,13 +11,23 @@ import java.util.Scanner;
 
 public class ObslugaCSV {
 
+	private String separator;
+	private String kodowanie;
+	public ObslugaCSV () {
+		this(";", "windows-1250");
+	}
+	
+	public ObslugaCSV(String separator, String kodowanie) {
+		this.separator = separator;
+		this.kodowanie = kodowanie;
+	}
 	public List<Employee> wczytaj(File plik) {
 		List<Employee> list = new ArrayList<>();
-		try (Scanner sc = new Scanner(plik)) {
+		try (Scanner sc = new Scanner(plik, kodowanie)) {
 			while (sc.hasNextLine()) {
 				String linia = sc.nextLine();
 
-				String[] fragmenty = linia.split(";");
+				String[] fragmenty = linia.split(separator);
 
 				int id = Integer.parseInt(fragmenty[0]);
 				int salary = Integer.parseInt(fragmenty[4]);
@@ -35,15 +46,15 @@ public class ObslugaCSV {
 		return list;
 	}
 	public void zapisz(List<Employee>lista , File plik) {
-		try(PrintWriter out = new PrintWriter(plik)) {
+		try(PrintWriter out = new PrintWriter(plik, kodowanie)) {
 			for (Employee employee : lista) {
-				out.print(employee.getId()+";"+employee.getFirstName()+";"+employee.getLastName()+";"+employee.getJobTitle()+";"+
-						employee.getSalary()+";"+employee.getHireDate()+";"+employee.getDepartmentName()+";"
-						+employee.getAddress()+";"+employee.getPostalCode()+";"+employee.getCity()+";"+employee.getCountry());
+				out.print(employee.getId()+separator+employee.getFirstName()+separator+employee.getLastName()+separator+employee.getJobTitle()+separator+
+						employee.getSalary()+separator+employee.getHireDate()+separator+employee.getDepartmentName()+separator
+						+employee.getAddress()+separator+employee.getPostalCode()+separator+employee.getCity()+separator+employee.getCountry());
 				out.println();
 			}
 			
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException  | UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
