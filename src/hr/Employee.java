@@ -99,11 +99,14 @@ public Employee(int id, String firstName, String lastName, String jobTitle, int 
 	this.country = country;
 	this.hireDate = hireDate;
 }
+
 @Override
 public String toString() {
-	return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", jobTitle=" + jobTitle
-			+ ", salary=" + salary + ", departmentName=" + departmentName + ", address=" + address + ", postalCode="
-			+ postalCode +" kod pocztowy= " +hireDate+ ", city=" + city + ", country=" + country + "]";
+	 return firstName + " " + lastName + " (id " + id
+			 + "), " + jobTitle  +", $" + salary
+			 + ", zatr." + hireDate + ", departament "
+			 + departmentName + ", " + address + ", "
+			 + postalCode + " " + city + ", " + country;
 }
 
 
