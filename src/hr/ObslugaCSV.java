@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -28,6 +29,7 @@ public class ObslugaCSV {
 				String linia = sc.nextLine();
 
 				String[] fragmenty = linia.split(separator);
+				fragmenty = Arrays.copyOf(fragmenty, 11);
 
 				int id = Integer.parseInt(fragmenty[0]);
 				int salary = Integer.parseInt(fragmenty[4]);
