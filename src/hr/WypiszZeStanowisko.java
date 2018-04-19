@@ -13,7 +13,8 @@ public class WypiszZeStanowisko {
 		
 		File file = new File("pracownicy.csv");
 		System.out.println("Zaczynamy czytać plik");
-		List<Employee> listaPracownikow = ObslugaCSV.wczytaj(file);
+		ObslugaCSV obslugaCSV = new ObslugaCSV();
+		List<Employee> listaPracownikow = obslugaCSV.wczytaj(file);
 
 		System.out.println();
 		System.out.println("Zakończenie wczytywania , Rozmiar listy: "+ listaPracownikow.size());
