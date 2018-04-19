@@ -2,6 +2,7 @@ package hr;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,20 @@ public class ObslugaCSV {
 		}
 
 		return list;
-
+	}
+	public static void zapisz(List<Employee>lista , File plik) {
+		try(PrintWriter out = new PrintWriter(plik)) {
+			for (Employee employee : lista) {
+				out.print(employee.getId()+";"+employee.getFirstName()+";"+employee.getLastName()+";"+employee.getJobTitle()+";"+
+						employee.getSalary()+";"+employee.getHireDate()+";"+employee.getDepartmentName()+";"
+						+employee.getAddress()+";"+employee.getPostalCode()+";"+employee.getCity()+";"+employee.getCountry());
+				out.println();
+			}
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 }

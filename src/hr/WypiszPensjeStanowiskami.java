@@ -5,15 +5,29 @@ import java.util.List;
 import java.util.Scanner;
 
 public class WypiszPensjeStanowiskami {
-
+	
 	public static void main(String[] args) {
+		String [] job = new String [18];
+		  job[0] ="Programmer";
+		  job[1] ="Public Accountant";
+		  job[2] ="Accounting Manager";
+		  job[3] ="President";
+		  job[4] ="Administration Vice President";
+		  job[5] ="Finance Manager";
+		  job[6] ="Accountant";
+		  job[7]="Purchasing Manager";
+		  job[8] ="Purchasing Clerk";
+		  job[9] ="Stock Manager";
+		  job[10] ="Stock Clerk";
+		  job[11] ="Sales Representative";
+		  job[12] ="Shipping Clerk";
+		  job[13] ="Administration Assistant";
+		  job[14] ="Marketing Manager";
+		  job[15] ="Marketing Representative";
+		  job[16] ="Human Resources Representative";
+		  job[17] ="Public Relations Representative";
 		
-		final String job1 ="Programmer";
-		final String job2 ="Sales";
-		final String job3 ="Public Accountant";
-		final String job4 ="Accounting Manager";
-		final String job5 = 
-		final String job6 = 
+		
 		
 		File file = new File("pracownicy.csv");
 		System.out.println("Zaczynamy czytać plik");
@@ -23,26 +37,26 @@ public class WypiszPensjeStanowiskami {
 		System.out.println("Zakończenie wczytywania , Rozmiar listy: "+ listaPracownikow.size());
 		int i =0;
 		double pensja=0;
-		double pensjaProgramisty=0;
-		
-                
+		double pensjaProgramisty=0;      
 		for (Employee employee : listaPracownikow) {
 			pensja +=employee.getSalary();
-			switch(job) {
-			case:
-			}
-			if(employee.getJobTitle().equalsIgnoreCase(job)) {
+			
+			for(String stanowisko: job) {
+				
+			if(stanowisko.equals(employee.getJobTitle())){
 				++i;
-			pensjaProgramisty+= employee.getSalary();
-			System.out.println(employee);
-			}
+				
+				pensjaProgramisty+= employee.getSalary();
+				
+				System.out.println(stanowisko);
+				System.out.println("Pensja na danym stanowisku: " + pensjaProgramisty/i);
 		}
-		sc.close();
-		System.out.println("Tylu pracowników: "+ i);
-		System.out.println("Pensja: " + pensja/listaPracownikow.size());
-		System.out.println("Pensja na danym stanowisku: " + pensjaProgramisty/i);
+			
 		
+	}	
+			
 	}
-
-
+		
+		System.out.println("Średnia pensja: " + pensja/listaPracownikow.size());
+}
 }
