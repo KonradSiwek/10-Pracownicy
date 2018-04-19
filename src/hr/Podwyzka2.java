@@ -13,7 +13,8 @@ public class Podwyzka2 {
 		List<Employee> listaPoPodwyzkach = new ArrayList<>();
 			File file = new File("pracownicy1.csv");
 			File wyjscie = new File ("pracownicy2.csv");
-			list = ObslugaCSV.wczytaj(file);
+			ObslugaCSV obslugaCSV = new ObslugaCSV();
+			list = obslugaCSV.wczytaj(file);
 			
 			int zmiana = 333;
 			
@@ -22,7 +23,7 @@ public class Podwyzka2 {
 				System.out.println(employee);
 				listaPoPodwyzkach.add(employee);
 				}
-			ObslugaCSV.zapisz(listaPoPodwyzkach, wyjscie);
+			obslugaCSV.zapisz(listaPoPodwyzkach, wyjscie);
 			sc.close();
 			}
 

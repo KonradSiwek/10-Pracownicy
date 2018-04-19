@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class ObslugaCSV {
 
-	public static List<Employee> wczytaj(File plik) {
+	public List<Employee> wczytaj(File plik) {
 		List<Employee> list = new ArrayList<>();
 		try (Scanner sc = new Scanner(plik)) {
 			while (sc.hasNextLine()) {
@@ -34,7 +34,7 @@ public class ObslugaCSV {
 
 		return list;
 	}
-	public static void zapisz(List<Employee>lista , File plik) {
+	public void zapisz(List<Employee>lista , File plik) {
 		try(PrintWriter out = new PrintWriter(plik)) {
 			for (Employee employee : lista) {
 				out.print(employee.getId()+";"+employee.getFirstName()+";"+employee.getLastName()+";"+employee.getJobTitle()+";"+

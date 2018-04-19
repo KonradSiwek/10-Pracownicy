@@ -13,7 +13,8 @@ public class TestZapisu {
 	   	 lista.add(new Employee(2, "Ola", "Malinowska", "kierowca", 3500, LocalDate.of(2009, 6, 7), "firma transportowa", "Ciemna 24", "02-432", "Warszawa", "Polska"));
 	   	 
 	   	 File plik = new File("nowy.csv");
-	   	 ObslugaCSV.zapisz(lista, plik);
+	   	ObslugaCSV obslugaCSV = new ObslugaCSV();
+	   	 obslugaCSV.zapisz(lista, plik);
 	   	 System.out.println("Gotowe");
 
 	}
