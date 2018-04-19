@@ -28,16 +28,12 @@ public class WypiszPensjeStanowiskami {
                 
 		for (Employee employee : listaPracownikow) {
 			pensja +=employee.getSalary();
-			switch(job) {
-			case:
-			}
-			if(employee.getJobTitle().equalsIgnoreCase(job)) {
+			if(employee.getJobTitle().equalsIgnoreCase(job1)) {
 				++i;
 			pensjaProgramisty+= employee.getSalary();
 			System.out.println(employee);
 			}
 		}
-		sc.close();
 		System.out.println("Tylu pracowników: "+ i);
 		System.out.println("Pensja: " + pensja/listaPracownikow.size());
 		System.out.println("Pensja na danym stanowisku: " + pensjaProgramisty/i);
